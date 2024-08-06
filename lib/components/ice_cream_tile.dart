@@ -1,13 +1,16 @@
 import "package:flutter/material.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 
+// ignore: must_be_immutable
 class IceCreamTile extends StatelessWidget {
   final IceCream iceCream;
   void Function()? onPressed;
+  final Widget icon;
   IceCreamTile({
     super.key,
     required this.iceCream,
     required this.onPressed,
+    required this.icon,
   });
 
   @override
@@ -22,7 +25,7 @@ class IceCreamTile extends StatelessWidget {
         subtitle: Text(iceCream.price),
         leading: Image.asset(iceCream.imagePath),
         trailing: IconButton(
-          icon: Icon(Icons.add),
+          icon: icon,
           onPressed: onPressed,
         ),
       ),
