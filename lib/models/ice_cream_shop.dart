@@ -2,7 +2,7 @@
 import "package:flutter/material.dart";
 import 'ice_cream.dart';
 
-class IceCreamShop {
+class IceCreamShop extends ChangeNotifier {
   // ice cream for sale list
   final List<IceCream> _shop = [
     // vanilla
@@ -35,11 +35,15 @@ class IceCreamShop {
   void addItemToCart(IceCream iceCream) {
     // Add the given ice cream item to the user's cart.
     _userCart.add(iceCream);
+    notifyListeners();
   }
 
   // remove ice cream from cart
   void removeItemFromCart(IceCream iceCream) {
     // Remove the given ice cream item from the user's cart.
     _userCart.remove(iceCream);
+    // Notify any listeners that the state of the IceCreamShop has changed.
+    // This will trigger any widgets that depend on the IceCreamShop to rebuild.
+    notifyListeners();
   }
 }
