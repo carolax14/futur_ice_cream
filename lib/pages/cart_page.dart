@@ -18,6 +18,9 @@ class _CartPageState extends State<CartPage> {
         .removeItemFromCart(iceCream);
   }
 
+  // pay button tapped
+  void payNow() {}
+
   @override
   Widget build(BuildContext context) {
     return Consumer<IceCreamShop>(
@@ -27,7 +30,7 @@ class _CartPageState extends State<CartPage> {
               child: Column(
                 children: [
                   // heading
-                  Text(
+                  const Text(
                     'Your cart',
                     style: TextStyle(fontSize: 20),
                   ),
@@ -43,10 +46,28 @@ class _CartPageState extends State<CartPage> {
                             // return the tile for this ice cream
                             return IceCreamTile(
                               iceCream: eachIceCream,
-                              icon: Icon(Icons.delete),
+                              icon: const Icon(Icons.delete),
                               onPressed: () => removeFromCart(eachIceCream),
                             );
                           })),
+
+                  // pay buttom
+                  GestureDetector(
+                    onTap: payNow,
+                    child: Container(
+                      padding: const EdgeInsets.all(25),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.brown,
+                          borderRadius: BorderRadius.circular(12)),
+                      child: const Center(
+                        child: Text(
+                          "Pay Now",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             )));
