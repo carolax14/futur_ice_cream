@@ -1,15 +1,45 @@
+// ignore: unused_import
 import "package:flutter/material.dart";
+import 'ice_cream.dart';
 
 class IceCreamShop {
   // ice cream for sale list
-
+  final List<IceCream> _shop = [
+    // vanilla
+    IceCream(
+        name: 'Vanilla', price: '2.5', imagePath: "lib/images/vanilla.png"),
+    // chocolate
+    IceCream(
+        name: 'Cholote', price: '3', imagePath: "lib/images/chocolate.png"),
+    // strawberry
+    IceCream(
+        name: 'Strawberry', price: '3', imagePath: "lib/images/strawberry.png"),
+    // lemon
+    IceCream(name: 'Lemon', price: '2.5', imagePath: "lib/images/lemon.png"),
+    // watermelon
+    IceCream(
+        name: 'Watermelon',
+        price: '3.5',
+        imagePath: "lib/images/watermelon.png"),
+  ];
   // user cart
+  List<IceCream> _userCart = [];
 
   // get ice cream list
+  List<IceCream> get iceCreams => _shop;
 
   //get user cart
+  List<IceCream> get userCart => _userCart;
 
   // add ice cream to cart
+  void addItemToCart(IceCream iceCream) {
+    // Add the given ice cream item to the user's cart.
+    _userCart.add(iceCream);
+  }
 
   // remove ice cream from cart
+  void removeItemFromCart(IceCream iceCream) {
+    // Remove the given ice cream item from the user's cart.
+    _userCart.remove(iceCream);
+  }
 }
