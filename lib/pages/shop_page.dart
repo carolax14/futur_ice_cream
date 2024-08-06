@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:futur_ice_cream/components/ice_cream_tile.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 import "package:futur_ice_cream/models/ice_cream_shop.dart";
 import "package:futur_ice_cream/models/ice_cream_shop.dart";
@@ -14,6 +15,12 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+// add iceCream to cart
+  void addToCart(IceCream iceCream) {
+    // Get the IceCreamShop object from the Provider.
+    Provider.of<IceCreamShop>(context, listen: false).addItemToCart(iceCream);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<IceCreamShop>(
@@ -39,8 +46,9 @@ class _ShopPageState extends State<ShopPage> {
                       IceCream eachIceCream = value.iceCreams[index];
 
                       // return the tile for this ice cream
-                      return ListTile(
-                        title: Text(eachIceCream.name),
+                      return IceCreamTile(
+                        iceCream: eachIceCream,
+                        onPressed: () => addToCart(eachIceCream),
                       );
                     }),
               ),
