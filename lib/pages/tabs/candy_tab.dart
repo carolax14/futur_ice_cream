@@ -5,10 +5,8 @@ class CandyTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("CANDY TAB"),
-      ),
+    return const Center(
+      child: Text("CANDY TAB"),
     );
   }
 }

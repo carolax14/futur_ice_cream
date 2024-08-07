@@ -46,7 +46,7 @@ class IceCreamTile extends StatelessWidget {
                   ),
                   padding: const EdgeInsets.all(4),
                   child: Text(
-                    '\$${iceCream.price}',
+                    '${iceCream.price}€',
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -75,7 +75,9 @@ class IceCreamTile extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               '120 kal',
-              style: TextStyle(color: Colors.grey[600]),
+              style: TextStyle(
+                color: Colors.grey[600],
+              ),
             ),
 
             // love icon + view button

@@ -37,15 +37,16 @@ class _CartPageState extends State<CartPage> {
       builder: (context, value, child) => Column(
         children: [
           // heading
-          const Row(
+          Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 25.0, top: 25, bottom: 25),
+                padding: const EdgeInsets.only(left: 25.0, top: 25, bottom: 25),
                 child: Text(
                   'Your Cart',
                   style: TextStyle(
-                    fontSize: 20,
-                  ),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.brown[600]),
                 ),
               ),
             ],
