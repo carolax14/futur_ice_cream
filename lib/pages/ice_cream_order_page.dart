@@ -160,12 +160,15 @@ class _IceCreamOrderPageState extends State<IceCreamOrderPage> {
                 style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
               const SizedBox(height: 15),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "120 kal",
-                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                    style: TextStyle(
+                        color: Colors.brown[800],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   )
                 ],
               ),

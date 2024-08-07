@@ -6,6 +6,14 @@ import "package:provider/provider.dart";
 
 import "../components/my_button.dart";
 
+/*
+
+CART PAGE
+
+  - User can check their cart and remove items if necessary
+  - User can tap 'Pay now' button €
+
+*/
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
 

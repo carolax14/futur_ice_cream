@@ -38,7 +38,7 @@ class CartTile extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        subtitle: Text('\$${iceCream.price}'),
+        subtitle: Text('${iceCream.price}€'),
         trailing: IconButton(
           icon: Icon(
             Icons.delete,
