@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:futur_ice_cream/components/ice_cream_tile.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 import "package:futur_ice_cream/models/ice_cream_shop.dart";
+import "package:futur_ice_cream/pages/ice_cream_order_page.dart";
 import "package:provider/provider.dart";
 
 class ShopPage extends StatefulWidget {
@@ -13,16 +14,15 @@ class ShopPage extends StatefulWidget {
 
 class _ShopPageState extends State<ShopPage> {
 // add iceCream to cart
-  void addToCart(IceCream iceCream) {
-    // add to cart
-    Provider.of<IceCreamShop>(context, listen: false).addItemToCart(iceCream);
-
-    // let user know it add been successfuly added
-    showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: const Text("Succefully added to cart !"),
-            ));
+  void goToIceCreamPage(IceCream iceCream) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => IceCreamOrderPage(
+          iceCream: iceCream,
+        ),
+      ),
+    );
   }
 
   @override
@@ -44,19 +44,18 @@ class _ShopPageState extends State<ShopPage> {
               // list of ice creams to buy
               Expanded(
                 child: ListView.builder(
-                    itemCount: value.iceCreams.length,
-                    itemBuilder: (context, index) {
-                      // get individual ice cream
-                      IceCream eachIceCream = value.iceCreams[index];
-
-                      // return the tile for this ice cream
-                      return IceCreamTile(
-                        iceCream: eachIceCream,
-                        icon: Icon(Icons.add),
-                        onPressed: () => addToCart(eachIceCream),
-                      );
-                    }),
-              ),
+                  itemCount: value.iceCreams.length,
+                  itemBuilder: (context, index) {
+                    // get individual iceCream
+                    IceCream eachIceCream = value.iceCreams[index];
+                    // return the tile for this iceCream
+                    return IceCreamTile(
+                      iceCream: eachIceCream,
+                      onPressed: () => goToIceCreamPage(eachIceCream),
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),

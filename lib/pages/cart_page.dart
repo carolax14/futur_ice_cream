@@ -1,8 +1,11 @@
 import "package:flutter/material.dart";
+import "package:futur_ice_cream/components/cart_tile.dart";
 import "package:futur_ice_cream/components/ice_cream_tile.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 import "package:futur_ice_cream/models/ice_cream_shop.dart";
 import "package:provider/provider.dart";
+
+import "../components/my_button.dart";
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -13,7 +16,7 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
   // remove an item from the user's cart
-  void removeFromCart(IceCream iceCream) {
+  void removeItemFromCart(IceCream iceCream) {
     Provider.of<IceCreamShop>(context, listen: false)
         .removeItemFromCart(iceCream);
   }
@@ -24,52 +27,44 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Consumer<IceCreamShop>(
-        builder: (context, value, child) => SafeArea(
-                child: Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Column(
-                children: [
-                  // heading
-                  const Text(
-                    'Your cart',
-                    style: TextStyle(fontSize: 20),
+      builder: (context, value, child) => Column(
+        children: [
+          // heading
+          const Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 25.0, top: 25, bottom: 25),
+                child: Text(
+                  'Your Cart',
+                  style: TextStyle(
+                    fontSize: 20,
                   ),
-
-                  // list of art items
-                  Expanded(
-                      child: ListView.builder(
-                          itemCount: value.userCart.length,
-                          itemBuilder: (context, index) {
-                            // get individual cart items
-                            IceCream eachIceCream = value.userCart[index];
-
-                            // return the tile for this ice cream
-                            return IceCreamTile(
-                              iceCream: eachIceCream,
-                              icon: const Icon(Icons.delete),
-                              onPressed: () => removeFromCart(eachIceCream),
-                            );
-                          })),
-
-                  // pay buttom
-                  GestureDetector(
-                    onTap: payNow,
-                    child: Container(
-                      padding: const EdgeInsets.all(25),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Colors.brown,
-                          borderRadius: BorderRadius.circular(12)),
-                      child: const Center(
-                        child: Text(
-                          "Pay Now",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
-            )));
+            ],
+          ),
+
+          // list of cart items
+          Expanded(
+            child: ListView.builder(
+              itemCount: value.userCart.length,
+              itemBuilder: (context, index) {
+                // get individual cart items
+                IceCream iceCream = value.userCart[index];
+
+                // return as a list tile
+                return CartTile(
+                  iceCream: iceCream,
+                  onPressed: () => removeItemFromCart(iceCream),
+                );
+              },
+            ),
+          ),
+
+          // pay button
+          MyButton(text: "Pay now", onTap: payNow)
+        ],
+      ),
+    );
   }
 }

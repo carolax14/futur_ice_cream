@@ -32,7 +32,7 @@ class IceCreamShop extends ChangeNotifier {
   List<IceCream> get userCart => _userCart;
 
   // add ice cream to cart
-  void addItemToCart(IceCream iceCream) {
+  void addItemToCart(IceCream iceCream, int quantity) {
     // Add the given ice cream item to the user's cart.
     _userCart.add(iceCream);
     notifyListeners();

@@ -1,11 +1,20 @@
-import "package:flutter/material.dart";
-import "package:futur_ice_cream/models/ice_cream.dart";
+import 'package:flutter/material.dart';
+import '../models/ice_cream.dart';
 
-// ignore: must_be_immutable
-class IceCreamTile extends StatelessWidget {
+/*
+
+CART TILE
+
+This is the tile seen on the iceCream order page.
+User can remove from cart by tapping the tile.
+
+
+*/
+
+class CartTile extends StatelessWidget {
   final IceCream iceCream;
   void Function()? onPressed;
-  IceCreamTile({
+  CartTile({
     super.key,
     required this.iceCream,
     required this.onPressed,
@@ -19,7 +28,7 @@ class IceCreamTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       margin: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
-      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: ListTile(
         leading: Image.asset(iceCream.imagePath),
         title: Padding(
@@ -29,10 +38,10 @@ class IceCreamTile extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        subtitle: Text('${iceCream.price}€'),
+        subtitle: Text('\$${iceCream.price}'),
         trailing: IconButton(
           icon: Icon(
-            Icons.arrow_forward,
+            Icons.delete,
             color: Colors.brown[300],
           ),
           onPressed: onPressed,
