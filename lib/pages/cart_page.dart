@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:futur_ice_cream/components/cart_tile.dart";
-import "package:futur_ice_cream/components/ice_cream_tile.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 import "package:futur_ice_cream/models/ice_cream_shop.dart";
 import "package:provider/provider.dart";
