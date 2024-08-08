@@ -10,8 +10,38 @@ The very first page to greet the user
 
 */
 
-class IntroPage extends StatelessWidget {
+class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
+
+  @override
+  _IntroPageState createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 3),
+      vsync: this,
+    );
+    _animation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    );
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +51,15 @@ class IntroPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // logo
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Image.asset(
-                "lib/images/cornet.png",
-                height: 350,
+            // Animated logo
+            ScaleTransition(
+              scale: _animation,
+              child: Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Image.asset(
+                  "lib/images/cornet.png",
+                  height: 350,
+                ),
               ),
             ),
 
@@ -37,7 +70,7 @@ class IntroPage extends StatelessWidget {
               "Tasting day",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.brown[800],
+                color: primaryColor,
                 fontSize: 24,
               ),
             ),
@@ -45,10 +78,10 @@ class IntroPage extends StatelessWidget {
             const SizedBox(height: 24),
 
             // sub heading
-            const Text(
+            Text(
               "How do you like your ice cream?",
               style: TextStyle(
-                color: Colors.brown,
+                color: bodyText2,
                 fontSize: 16,
               ),
             ),
@@ -68,7 +101,7 @@ class IntroPage extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 25),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.brown[700],
+                    color: buttonColor,
                     borderRadius: BorderRadius.circular(12)),
                 child: const Text(
                   "Enter Shop",

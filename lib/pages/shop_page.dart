@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "package:futur_ice_cream/components/my_tab.dart";
 import "package:futur_ice_cream/const.dart";
+import "package:futur_ice_cream/pages/cart_page.dart";
+import "package:futur_ice_cream/pages/intro_page.dart";
 import "package:futur_ice_cream/pages/tabs/cornet_tab.dart";
 
 /*
@@ -49,24 +51,44 @@ class _ShopPageState extends State<ShopPage> {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           automaticallyImplyLeading: false,
-          title: null,
+          title: Center(
+            child: Text(
+              'Explore Our Flavors',
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                  color: buttonColor),
+            ),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.exit_to_app_outlined, color: buttonColor),
+              onPressed: () {
+                // Naviguer vers la page des paramètres ou exécuter une autre action
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const IntroPage()),
+                );
+              },
+            ),
+          ],
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(
                 140.0), // Ajustez la hauteur si nécessaire
             child: Column(
               children: [
-                Center(
+                /*Center(
                   child: Text(
                     'Explore Our Flavors',
                     style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: button),
                   ),
-                ),
+                ),*/
                 const SizedBox(
                     height:
-                        10.0), // Espace entre le titre et la barre de recherche
+                        15.0), // Espace entre le titre et la barre de recherche
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: TextField(
@@ -87,7 +109,7 @@ class _ShopPageState extends State<ShopPage> {
                         10.0), // Espace entre la barre de recherche et le TabBar
                 TabBar(
                   tabs: myTabs,
-                  indicatorColor: Colors.brown[400],
+                  indicatorColor: highlightColor,
                 ),
               ],
             ),

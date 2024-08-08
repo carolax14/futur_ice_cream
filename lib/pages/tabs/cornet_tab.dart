@@ -1,4 +1,5 @@
 import 'package:futur_ice_cream/components/ice_cream_tile.dart';
+import 'package:futur_ice_cream/const.dart';
 import 'package:futur_ice_cream/models/ice_cream.dart';
 import 'package:futur_ice_cream/models/ice_cream_shop.dart';
 import 'package:futur_ice_cream/pages/ice_cream_order_page.dart';
@@ -33,18 +34,18 @@ class _CornetTabState extends State<CornetTab> {
         children: [
           // heading
           Padding(
-            padding: const EdgeInsets.only(left: 25.0, top: 25),
+            padding: const EdgeInsets.only(left: 25.0, top: 15),
             child: Text(
               'Popular',
               style: TextStyle(
                 //fontWeight: FontWeight.bold,
-                fontSize: 25, fontWeight: FontWeight.bold,
-                color: Colors.brown[600],
+                fontSize: 20, fontWeight: FontWeight.bold,
+                color: buttonColor,
               ),
             ),
           ),
 
-          const SizedBox(height: 25),
+          const SizedBox(height: 2),
 
           // list of coffee
           Expanded(

@@ -26,7 +26,7 @@ class MyBottomNavBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
       ),
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(6),
       child: GNav(
         onTabChange: (value) => onTabChange!(value),
         color: Colors.grey[400],
@@ -34,7 +34,7 @@ class MyBottomNavBar extends StatelessWidget {
         tabBorderRadius: 24,
         tabBackgroundColor: Colors.grey.shade300,
         tabActiveBorder: Border.all(color: Colors.white),
-        gap: 8,
+        gap: 6,
         mainAxisAlignment: MainAxisAlignment.center,
         tabs: const [
           GButton(

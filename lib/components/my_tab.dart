@@ -8,7 +8,7 @@ class MyTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tab(
-      height: 70,
+      height: 60,
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:futur_ice_cream/components/cart_tile.dart";
+import "package:futur_ice_cream/const.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 import "package:futur_ice_cream/models/ice_cream_shop.dart";
 import "package:provider/provider.dart";
@@ -46,7 +47,7 @@ class _CartPageState extends State<CartPage> {
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.brown[600]),
+                      color: buttonColor),
                 ),
               ),
             ],

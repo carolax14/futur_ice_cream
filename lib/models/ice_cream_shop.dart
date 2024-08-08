@@ -10,17 +10,20 @@ class IceCreamShop extends ChangeNotifier {
         name: 'Vanilla', price: '2.5', imagePath: "lib/images/vanilla.png"),
     // chocolate
     IceCream(
-        name: 'Cholote', price: '3', imagePath: "lib/images/chocolate.png"),
+        name: 'Cholote',
+        price: '3',
+        imagePath: "lib/images/corne_chocolate.png"),
     // strawberry
     IceCream(
         name: 'Strawberry', price: '3', imagePath: "lib/images/strawberry.png"),
     // lemon
-    IceCream(name: 'Lemon', price: '2.5', imagePath: "lib/images/lemon.png"),
+    IceCream(
+        name: 'Lagon', price: '2.5', imagePath: "lib/images/corne_blue.png"),
     // watermelon
     IceCream(
-        name: 'Watermelon',
+        name: 'raspberry',
         price: '3.5',
-        imagePath: "lib/images/watermelon.png"),
+        imagePath: "lib/images/corne_pink.png"),
   ];
   // user cart
   List<IceCream> _userCart = [];

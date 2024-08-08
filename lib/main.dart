@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: backgroundColor, // Couleur de fond globale
+          // Set Montserrat as primary font
+          scaffoldBackgroundColor: backgroundColor, // Overall background color
         ),
         home: const IntroPage(),
       ),

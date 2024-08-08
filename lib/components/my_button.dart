@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futur_ice_cream/const.dart';
 
 /*
 
@@ -27,7 +28,7 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 25),
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.brown,
+          color: buttonColor,
           borderRadius: BorderRadius.circular(12),
         ),
         padding: const EdgeInsets.all(25),
@@ -37,7 +38,7 @@ class MyButton extends StatelessWidget {
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 19,
+              fontSize: 14,
             ),
           ),
         ),

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:futur_ice_cream/const.dart";
 import "package:futur_ice_cream/models/ice_cream.dart";
 
 /*
@@ -38,7 +39,7 @@ class IceCreamTile extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.brown[400],
+                    color: primaryColor,
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(12),
                       topRight: Radius.circular(12),
@@ -50,7 +51,7 @@ class IceCreamTile extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 13,
                     ),
                   ),
                 ),
@@ -67,7 +68,8 @@ class IceCreamTile extends StatelessWidget {
             // ice cream flavor
             Text(
               iceCream.name,
-              style: const TextStyle(
+              style: TextStyle(
+                color: bodyText1,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
@@ -76,13 +78,13 @@ class IceCreamTile extends StatelessWidget {
             Text(
               '120 kal',
               style: TextStyle(
-                color: Colors.grey[600],
+                color: bodyText2,
               ),
             ),
 
             // love icon + view button
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(1.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -103,7 +105,7 @@ class IceCreamTile extends StatelessWidget {
                   IconButton(
                     icon: Icon(
                       Icons.arrow_forward,
-                      color: Colors.brown[300],
+                      color: bodyText2,
                     ),
                     onPressed: onPressed,
                   ),

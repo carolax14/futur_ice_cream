@@ -58,11 +58,13 @@ class _IceCreamOrderPageState extends State<IceCreamOrderPage> {
       // let the user know that item was added to cart successfully
       showDialog(
         context: context,
-        builder: (context) => const AlertDialog(
-          backgroundColor: Colors.brown,
-          title: Text(
-            "Successfully added to cart",
-            style: TextStyle(color: Colors.white),
+        builder: (context) => AlertDialog(
+          backgroundColor: buttonColor,
+          title: Center(
+            child: const Text(
+              "Successfully added to cart",
+              style: TextStyle(color: Colors.white, fontSize: 14),
+            ),
           ),
         ),
       );
@@ -134,7 +136,7 @@ class _IceCreamOrderPageState extends State<IceCreamOrderPage> {
                             quantity.toString(),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.brown[800],
+                              color: bodyText1,
                               fontSize: 32,
                             ),
                           ),
@@ -166,7 +168,7 @@ class _IceCreamOrderPageState extends State<IceCreamOrderPage> {
                   Text(
                     "120 kal",
                     style: TextStyle(
-                        color: Colors.brown[800],
+                        color: bodyText1,
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                   )
