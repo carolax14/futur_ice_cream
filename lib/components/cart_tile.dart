@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futur_ice_cream/const.dart';
 import '../models/ice_cream.dart';
 
 /*
@@ -42,7 +43,7 @@ class CartTile extends StatelessWidget {
         trailing: IconButton(
           icon: Icon(
             Icons.delete,
-            color: Colors.brown[300],
+            color: bodyText2,
           ),
           onPressed: onPressed,
         ),
