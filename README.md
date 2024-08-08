@@ -73,5 +73,15 @@ Une barre de navigation inférieure (`bottom_nav_bar.dart`) pour naviguer entre 
 Les fichiers d'onglets (`candy_tab.dart`, `cornet_tab.dart`, `milkshake_tab.dart`, `scoop_tab.dart`) représentent différentes catégories de produits dans l'application. Ces onglets sont utilisés dans la `Shop Page` pour filtrer les produits par type.
 
 ---
+## Téléchargement de l'APK
+
+Vous pouvez télécharger la dernière version de l'application Android [ici](release/app-release.apk).
+
+Pour installer l'APK :
+1. Téléchargez le fichier APK depuis le lien ci-dessus.
+2. Ouvrez le fichier APK sur votre appareil Android.
+3. Suivez les instructions pour installer l'application.
+
+_Note : Vous devrez peut-être autoriser l'installation d'applications à partir de sources inconnues dans les paramètres de votre appareil._
 
 
