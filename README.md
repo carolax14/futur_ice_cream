@@ -10,29 +10,7 @@ Futur Ice Cream est conçue pour gérer un magasin de crème glacée. Elle perme
 
 L'application est organisée de manière modulaire pour faciliter la maintenance et la réutilisation des composants. Voici un aperçu des fichiers principaux :
 
-lib/
-├── const.dart # Contient les constantes utilisées dans l'application (couleurs, styles, etc.)
-├── main.dart # Point d'entrée principal de l'application
-├── pages/
-│ ├── home_page.dart # Page d'accueil
-│ ├── shop_page.dart # Page du magasin
-│ ├── cart_page.dart # Page du panier
-│ ├── ice_cream_order_page.dart # Page de commande de crème glacée
-│ └── intro_page.dart # Page d'introduction
-├── widgets/
-│ ├── my_button.dart # Widget de bouton réutilisable
-│ ├── my_tab.dart # Widget d'onglet personnalisé
-│ ├── ice_cream_tile.dart # Widget affichant une tuile de crème glacée
-│ ├── cart_tile.dart # Widget affichant une tuile d'article dans le panier
-│ └── bottom_nav_bar.dart # Barre de navigation inférieure
-├── tabs/
-│ ├── candy_tab.dart # Onglet pour les bonbons
-│ ├── cornet_tab.dart # Onglet pour les cornets
-│ ├── milkshake_tab.dart # Onglet pour les milkshakes
-│ └── scoop_tab.dart # Onglet pour les boules de glace
-└── models/
-├── ice_cream.dart # Modèle pour les crèmes glacées
-└── ice_cream_shop.dart # Fonctions & liste des crèmes glacées
+![Capture d'écran de l'application](lib/images/futur_ice_cream_architecture.png)
 
 
 ### Navigation
