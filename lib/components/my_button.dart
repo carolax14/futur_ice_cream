@@ -11,6 +11,7 @@ A generic brown button used as:
 
 */
 
+// ignore: must_be_immutable
 class MyButton extends StatelessWidget {
   final String text;
   void Function()? onTap;

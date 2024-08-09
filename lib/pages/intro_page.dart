@@ -14,6 +14,7 @@ class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _IntroPageState createState() => _IntroPageState();
 }
 

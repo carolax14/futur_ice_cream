@@ -60,8 +60,8 @@ class _IceCreamOrderPageState extends State<IceCreamOrderPage> {
         context: context,
         builder: (context) => AlertDialog(
           backgroundColor: buttonColor,
-          title: Center(
-            child: const Text(
+          title: const Center(
+            child: Text(
               "Successfully added to cart",
               style: TextStyle(color: Colors.white, fontSize: 14),
             ),

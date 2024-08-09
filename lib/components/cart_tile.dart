@@ -12,6 +12,7 @@ User can remove from cart by tapping the tile.
 
 */
 
+// ignore: must_be_immutable
 class CartTile extends StatelessWidget {
   final IceCream iceCream;
   void Function()? onPressed;

@@ -26,7 +26,7 @@ class IceCreamShop extends ChangeNotifier {
         imagePath: "lib/images/corne_pink.png"),
   ];
   // user cart
-  List<IceCream> _userCart = [];
+  final List<IceCream> _userCart = [];
 
   // get ice cream list
   List<IceCream> get iceCreams => _shop;

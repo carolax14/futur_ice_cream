@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import "package:futur_ice_cream/components/my_tab.dart";
 import "package:futur_ice_cream/const.dart";
-import "package:futur_ice_cream/pages/cart_page.dart";
 import "package:futur_ice_cream/pages/intro_page.dart";
 import "package:futur_ice_cream/pages/tabs/cornet_tab.dart";
 
